@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Origin</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        input, button {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .counter {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Same Origin Iframe</h1>
+    <p>Login User</p>
+
+    <div class="form-container">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="dr-strange">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="dr.strange@gmail.com">
+
+        <button id="submitBtn">Submit</button>
+    </div>
+
+    <div class="counter">
+        Button Clicks: <span id="clickCounter">0</span>
+    </div>
+
+    <script>
+        let clickCount = 0;
+        const clickCounterElement = document.getElementById('clickCounter');
+        const submitButton = document.getElementById('submitBtn');
+
+        submitButton.addEventListener('click', () => {
+            clickCount++;
+            clickCounterElement.textContent = clickCount;
+        });
+    </script>
+</body>
+</html>
